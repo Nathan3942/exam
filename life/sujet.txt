@@ -1,0 +1,45 @@
+
+
+fonction autorise : atoi, read, putchar, malloc, calloc, realloc, free
+Game of life : prototype ./life width height iteration
+width et height sont la dimention du tableau et iteration est le nombre d'iteration du jeu de la vie
+
+La configuration initial du tableau va etre dessine par une secence de commande dans l'input standard
+
+Imagine un stylo commencant dans le coin en haut a gauche du tableau.
+Chaque commande est un de ces characteres:
+w a s d -> bouge le stylo en haut, a gauche, en bas, a droite.
+x -> soulever ou abaisser le stylo pour commencer ou arrêter de dessiner
+(lorsqu'il est utilisé avec echo, vous pouvez ignorer le \n)
+
+Une fois la fin du fichier atteint, ton programme doit sumuler un jeu de la vie dans le tableau et 
+afficher le resultat dans la sortie standard.
+
+Chaque cellules vivante doit etre represente par un '0', les morte par un espace.
+Chaque cellules en dehors du tableau doivent etre considere comme morte.
+
+Ex : echo 'sdxddssaaww' | ./a.out 5 5 0 | cat -echo
+
+     $
+ 000 $
+ 0 0 $
+ 000 $
+     $
+
+
+Regle du jeu de la vie :
+
+Règles de transition
+
+    Naissance
+    Une cellule morte ayant exactement 3 voisines vivantes devient vivante (elle "naît").
+
+    Survie
+    Une cellule vivante ayant 2 ou 3 voisines vivantes reste vivante.
+
+    Mort par solitude
+    Une cellule vivante ayant moins de 2 voisines vivantes meurt (sous-population).
+
+    Mort par surpopulation
+    Une cellule vivante ayant plus de 3 voisines vivantes meurt (surpopulation).
+
